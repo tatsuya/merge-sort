@@ -1,6 +1,6 @@
 'use strict';
 
-function sort(arr, cmp) {
+function sort(arr) {
   var len = arr.length;
 
   if (len < 2) {
@@ -26,15 +26,7 @@ function merge(left, right) {
     }
   }
 
-  while (left.length) {
-    arr.push(left.shift());
-  }
-
-  while (right.length) {
-    arr.push(right.shift());
-  }
-
-  return arr;
+  return arr.concat(left, right);
 }
 
 module.exports = sort;
